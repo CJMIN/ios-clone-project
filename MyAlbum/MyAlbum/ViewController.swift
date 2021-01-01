@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var currentValue = 0
+    var currentValue =  0
     
     @IBOutlet weak var priceLabel: UILabel!
     
