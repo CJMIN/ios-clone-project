@@ -49,6 +49,7 @@ class ViewController2: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         print("Second : viewDidDisappear")
+        current_state=14
     }
 
     

@@ -932,7 +932,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFF-sN-WrJ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFF-sN-WrJ">
                                                         <rect key="frame" x="292" y="0.0" width="28" height="42"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="gFF-sN-WrJ" secondAttribute="height" multiplier="1:1.5" id="Ax8-gf-5dy"/>
@@ -961,6 +961,7 @@
                     <navigationItem key="navigationItem" id="JHp-BY-MSQ"/>
                     <connections>
                         <outlet property="TextFieldOfVC3" destination="OGI-ab-2x2" id="f0H-Xc-N01"/>
+                        <outlet property="a" destination="XTZ-QX-ztX" id="bYc-NA-9Kx"/>
                         <outlet property="a0" destination="zZY-Gu-4ix" id="OLg-3z-OdU"/>
                         <outlet property="a1" destination="vza-OC-ris" id="ZW5-0d-uK5"/>
                         <outlet property="a10" destination="npi-c7-IV7" id="3uA-mI-RsW"/>
@@ -1009,6 +1010,31 @@
                         <outlet property="a7" destination="WJb-TT-H4R" id="tBN-9A-sUy"/>
                         <outlet property="a8" destination="Urq-Dt-KUQ" id="Fcp-mN-iWr"/>
                         <outlet property="a9" destination="3jH-lC-l0c" id="ukv-MS-jpb"/>
+                        <outlet property="b" destination="HBV-NQ-7KS" id="tjS-j6-k5x"/>
+                        <outlet property="c" destination="w1c-wQ-f6w" id="Iil-KC-9I5"/>
+                        <outlet property="d" destination="cS2-Ad-70D" id="1n5-aP-IBO"/>
+                        <outlet property="e" destination="AuZ-OO-kot" id="fA8-LW-mS1"/>
+                        <outlet property="f" destination="TiE-Fo-eEB" id="lCa-BA-GmQ"/>
+                        <outlet property="g" destination="1cm-16-D0d" id="kFm-UJ-FsQ"/>
+                        <outlet property="h" destination="zz7-wf-XnB" id="ot1-EJ-hBP"/>
+                        <outlet property="i" destination="Rh7-oD-EwW" id="xAf-hE-QAx"/>
+                        <outlet property="j" destination="fZL-fv-RZ5" id="aO2-WZ-ZsE"/>
+                        <outlet property="k" destination="wZR-6j-St4" id="5U3-bn-zns"/>
+                        <outlet property="l" destination="nxh-1G-bzO" id="JFC-ft-Yt1"/>
+                        <outlet property="m" destination="C4V-0V-ZR8" id="eZO-xm-3mE"/>
+                        <outlet property="n" destination="bpJ-KW-9Cl" id="WMW-3j-zxZ"/>
+                        <outlet property="o" destination="uND-RD-j8D" id="2fg-OF-pPp"/>
+                        <outlet property="p" destination="rB4-K4-4L0" id="IA2-Ef-5Ga"/>
+                        <outlet property="q" destination="kLO-bZ-Se2" id="yvQ-UG-wa6"/>
+                        <outlet property="r" destination="h3e-on-MFi" id="2cW-aO-XRY"/>
+                        <outlet property="s" destination="QBG-oT-MvY" id="wZV-nd-y8j"/>
+                        <outlet property="t" destination="KBP-lf-LEO" id="C3e-Px-XY9"/>
+                        <outlet property="u" destination="Ff6-ZU-CKb" id="FjZ-pm-zmi"/>
+                        <outlet property="v" destination="7OC-ee-914" id="AV9-ZS-t1Q"/>
+                        <outlet property="w" destination="duK-MX-l0f" id="EaE-PJ-gzZ"/>
+                        <outlet property="x" destination="F3O-uN-oQ7" id="aRf-Nq-aHi"/>
+                        <outlet property="y" destination="Uj7-i7-nDD" id="mxZ-rU-N4H"/>
+                        <outlet property="z" destination="AZh-0F-x9w" id="yOK-6u-Al8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ns-Tu-boL" sceneMemberID="firstResponder"/>

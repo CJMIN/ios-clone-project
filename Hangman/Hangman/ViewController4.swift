@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 var current_state : Int = 14
+var check_value : Bool = false
 
 class ViewController4: UIViewController {
 
@@ -33,6 +34,8 @@ class ViewController4: UIViewController {
     var Alphabet:String = ""
     
     var word_arr_in_VC4 : [String] = ["a"]
+    
+    var temp_in_VC4 : [String] = []
     
     
     
@@ -69,6 +72,7 @@ class ViewController4: UIViewController {
     
     @IBAction func CheckButton(_ sender: Any) {
         
+        check_value=true
         var flag :Bool=true
         
         print(word_arr_in_VC4)
@@ -89,7 +93,9 @@ class ViewController4: UIViewController {
             
         }else{
             OXImage.image=UIImage(named: "X")
-            current_state-=1
+            if (current_state>0){
+                current_state-=1
+            }
             HangmanImage.image=UIImage(named: String(current_state))
         }
     }
