@@ -12,6 +12,8 @@ var label_arr:[UILabel]=[]
 var alphabet_label_arr:[String:UILabel]=[:]
 
 var current_alphabet : String=""
+var NumOfCount :Int = 0
+var TempCountNum :Int = 0
 
 class ViewController3: UIViewController {
     
@@ -135,6 +137,8 @@ class ViewController3: UIViewController {
         }
         temp=word_arr
         print("VC3 : viewDidload \(word_arr)")
+        NumOfCount = word_arr.count
+        TempCountNum = NumOfCount
             
         
         
@@ -148,6 +152,7 @@ class ViewController3: UIViewController {
             for i in idx_arr{
                 print(i)
                 word_arr_current[i]=word_arr[i]
+                TempCountNum-=1
                 
             }
             
@@ -164,7 +169,7 @@ class ViewController3: UIViewController {
         }
         
         
-        let NumOfCount :Int = word_arr.count
+//        let NumOfCount :Int = word_arr.count
         
         for i in 0...(NumOfCount-1){
             label_arr[i].text=String(word_arr_current[i])

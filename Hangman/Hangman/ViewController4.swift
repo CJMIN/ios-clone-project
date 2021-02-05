@@ -89,14 +89,24 @@ class ViewController4: UIViewController {
         
         if (flag){
             OXImage.image=UIImage(named: "O")
-            HangmanImage.image=UIImage(named: String(current_state))
+//            HangmanImage.image=UIImage(named: String(current_state))
+            if (TempCountNum==1){
+                HangmanImage.image=UIImage(named:"goodjob")
+            }else{
+                HangmanImage.image=UIImage(named: String(current_state))
+            }
             
         }else{
             OXImage.image=UIImage(named: "X")
             if (current_state>0){
                 current_state-=1
             }
-            HangmanImage.image=UIImage(named: String(current_state))
+            if (TempCountNum==0){
+                HangmanImage.image=UIImage(named:"goodjob")
+            }else{
+                HangmanImage.image=UIImage(named: String(current_state))
+            }
+            
         }
     }
 
