@@ -22,6 +22,11 @@ class ViewController1: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         print("First : viewDidAppear")
+        
+        var popUpWindow: PopUpWindow!
+        popUpWindow = PopUpWindow(title: "행맨이를 구할 수 있겠어요?", text: "사람 살려~~~날 매달지마~~", buttontext: "맞추면 구할 수 있어요!")
+        self.present(popUpWindow, animated: true, completion: nil)
+        
         print("======================")
     }
     

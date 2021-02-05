@@ -19,6 +19,7 @@
 		8A58D17125CD8DB2008F01FC /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A58D17025CD8DB2008F01FC /* ViewController2.swift */; };
 		8A58D17625CD8DC4008F01FC /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A58D17525CD8DC4008F01FC /* ViewController3.swift */; };
 		8A58D17B25CD8EE5008F01FC /* ViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A58D17A25CD8EE5008F01FC /* ViewController4.swift */; };
+		8A58D1C825CE03AB008F01FC /* PopUpWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A58D1C725CE03AB008F01FC /* PopUpWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		8A58D17025CD8DB2008F01FC /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		8A58D17525CD8DC4008F01FC /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 		8A58D17A25CD8EE5008F01FC /* ViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController4.swift; sourceTree = "<group>"; };
+		8A58D1C725CE03AB008F01FC /* PopUpWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				8A58D17025CD8DB2008F01FC /* ViewController2.swift */,
 				8A58D17525CD8DC4008F01FC /* ViewController3.swift */,
 				8A58D17A25CD8EE5008F01FC /* ViewController4.swift */,
+				8A58D1C725CE03AB008F01FC /* PopUpWindow.swift */,
 			);
 			path = Hangman;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A58D1C825CE03AB008F01FC /* PopUpWindow.swift in Sources */,
 				8A58D17125CD8DB2008F01FC /* ViewController2.swift in Sources */,
 				8A58D17B25CD8EE5008F01FC /* ViewController4.swift in Sources */,
 				8A58D16C25CD8D9B008F01FC /* ViewController1.swift in Sources */,
