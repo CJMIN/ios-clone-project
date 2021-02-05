@@ -150,7 +150,7 @@ class ViewController3: UIViewController {
         
         VC4.Alphabet=self.TextFieldOfVC3.text!
         
-        VC4.word_arr=word_arr
+        VC4.word_arr_in_VC4=word_arr
         
 //        VC4.HangmanImage.image=UIImage(named: String(current_state))
         
