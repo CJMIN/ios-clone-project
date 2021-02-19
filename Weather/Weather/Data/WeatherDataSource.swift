@@ -121,7 +121,7 @@ extension WeatherDataSource{
     
     private func fetchCurrentWeather(cityName :String,completion : @escaping (Result<CurrentWeather, Error>) -> () ){
         
-        let urlStr =  "https://api.openweathermap.org/data/2.5/weather?q=\(cityName)&appid=/(apiKey)&units=metric&lang=kr"
+        let urlStr =  "https://api.openweathermap.org/data/2.5/weather?q=\(cityName)&appid=\(apiKey)&units=metric&lang=kr"
         
         fetch(urlStr : urlStr, completion : completion )
         
@@ -130,7 +130,7 @@ extension WeatherDataSource{
 
     private func fetchCurrentWeather(cityId :Int,completion : @escaping (Result<CurrentWeather, Error>) -> () ){
         
-        let urlStr =  "https://api.openweathermap.org/data/2.5/weather?id=\(cityId)&appid=/(apiKey)&units=metric&lang=kr"
+        let urlStr =  "https://api.openweathermap.org/data/2.5/weather?id=\(cityId)&appid=\(apiKey)&units=metric&lang=kr"
         
         fetch(urlStr : urlStr, completion : completion )
         
@@ -140,7 +140,7 @@ extension WeatherDataSource{
 
     private func fetchCurrentWeather(location :CLLocation,completion : @escaping (Result<CurrentWeather, Error>) -> () ){
 
-        let urlStr =  "https://api.openweathermap.org/data/2.5/weather?lat=\(location.coordinate.latitude)&lon=\(location.coordinate.longitude)&appid=/(apiKey)&units=metric&lang=kr"
+        let urlStr =  "https://api.openweathermap.org/data/2.5/weather?lat=\(location.coordinate.latitude)&lon=\(location.coordinate.longitude)&appid=\(apiKey)&units=metric&lang=kr"
 
         fetch(urlStr : urlStr, completion : completion )
 
@@ -154,7 +154,7 @@ extension WeatherDataSource{
     
     private func fetchForecast(cityName :String,completion : @escaping (Result<Forecast, Error>) -> () ){
         
-        let urlStr =  "https://api.openweathermap.org/data/2.5/forecast?q=\(cityName)&appid=/(apiKey)&units=metric&lang=kr"
+        let urlStr =  "https://api.openweathermap.org/data/2.5/forecast?q=\(cityName)&appid=\(apiKey)&units=metric&lang=kr"
         
         fetch(urlStr : urlStr, completion : completion )
         
@@ -163,7 +163,7 @@ extension WeatherDataSource{
 
     private func fetchForecast(cityId :Int,completion : @escaping (Result<Forecast, Error>) -> () ){
         
-        let urlStr =  "https://api.openweathermap.org/data/2.5/forecast?id=\(cityId)&appid=/(apiKey)&units=metric&lang=kr"
+        let urlStr =  "https://api.openweathermap.org/data/2.5/forecast?id=\(cityId)&appid=\(apiKey)&units=metric&lang=kr"
         
         fetch(urlStr : urlStr, completion : completion )
         
@@ -173,7 +173,7 @@ extension WeatherDataSource{
 
     private func fetchForecast(location :CLLocation,completion : @escaping (Result<Forecast, Error>) -> () ){
 
-        let urlStr =  "https://api.openweathermap.org/data/2.5/forecast?lat=\(location.coordinate.latitude)&lon=\(location.coordinate.longitude)&appid=/(apiKey)&units=metric&lang=kr"
+        let urlStr =  "https://api.openweathermap.org/data/2.5/forecast?lat=\(location.coordinate.latitude)&lon=\(location.coordinate.longitude)&appid=\(apiKey)&units=metric&lang=kr"
 
         fetch(urlStr : urlStr, completion : completion )
 
