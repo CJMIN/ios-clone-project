@@ -191,6 +191,9 @@
                             <constraint firstItem="65q-bQ-GOV" firstAttribute="top" secondItem="Awf-R9-vwT" secondAttribute="bottom" id="vKc-xW-3TH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="listTableView" destination="65q-bQ-GOV" id="6Xz-cs-aW4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
