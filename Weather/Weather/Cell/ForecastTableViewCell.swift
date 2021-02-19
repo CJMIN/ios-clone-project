@@ -2,7 +2,7 @@
 //  ForecastTableViewCell.swift
 //  Weather
 //
-//  Created by 최정민 on 2021/02/19.
+//  Created by 최정민 on 2021/02/20.
 //
 
 import UIKit
