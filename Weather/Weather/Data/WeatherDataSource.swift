@@ -17,7 +17,7 @@ class WeatherDataSource{
     
     
     var summary:CurrentWeather?
-    var forecast: Forecast?
+    var forecastList = [ForecastData]()
     
     
     let apiQueue = DispatchQueue(label:"ApiQueue",attributes: .concurrent)
@@ -47,9 +47,16 @@ class WeatherDataSource{
                 
                 switch result {
                 case .success(let data):
-                    self.forecast = data
+                    self.forecastList = data.list.map{
+                        let dt = Date(timeIntervalSince1970: TimeInterval($0.dt))
+                        let icon = $0.weather.first?.icon ?? ""
+                        let weather = $0.weather.first?.description ?? "알 수 없음"
+                        let temperature = $0.main.temp
+                        
+                        return ForecastData(date: dt, icon: icon, weather: weather, temperature: temperature)
+                    }
                 default:
-                    self.forecast = nil
+                    self.forecastList = []
                 }
                 
                 self.group.leave()
