@@ -22,4 +22,6 @@
 ### (1) [설명]()
 ### (2) [코드](https://github.com/CJMIN/ios-practice/tree/main/Weather)
 
-<img width="419" alt="스크린샷 2021-02-20 오전 11 23 57" src="https://user-images.githubusercontent.com/46758264/108580316-584d7480-736e-11eb-8947-4228d6a95870.png">
+<img width="419" alt="스크린샷 2021-02-20 오전 11 23 57" src="https://user-images.githubusercontent.com/46758264/108580316-584d7480-736e-11eb-8947-4228d6a95870.png">
+
+# 6.
