@@ -6,15 +6,33 @@ class VC1: UIViewController {
     
     var ContactInforArray:[String] = ["최정민"]
     
+    var idx:Int = 0
+    
     
     @IBAction func PlusButton(_ sender: Any) {
+        if self.ContactInforArray.contains("연락처를 입력하세요.") {
+            return
+        }
+        self.ContactInforArray.append("연락처를 입력하세요.")
+        self.tableView.reloadData()
     }
     
     
-
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.tableView.delegate = self
+        
+        self.tableView.dataSource = self
+        
+        let tableView_Nib = UINib(nibName: "TableViewCell", bundle: nil)
+        
+        tableView.register(tableView_Nib, forCellReuseIdentifier: "VC1")
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,7 +90,9 @@ extension VC1: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "VC5", sender:self)
+        
+        self.idx = indexPath.row
+        self.performSegue(withIdentifier: "VC1toVC2", sender: nil)
     }
     
     
@@ -87,6 +107,17 @@ extension VC1: UITableViewDataSource{
 extension VC1: UITableViewDelegate{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let dest = segue.destination
+        
+        guard let VC2 = dest as? VC2 else{
+            return
+        }
+        
+        VC2.idx = self.idx
+        print("self idx : ",self.idx)
+        print("VC2 idx : ",VC2.idx)
+        
         
         
         
