@@ -4,7 +4,7 @@ class VC1: UIViewController {
     
     
     
-    var ContactInforArray:[String] = ["최정민"]
+    var ContactInforArray:[String] = ["CJM"]
     
     var idx:Int = 0
     

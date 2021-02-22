@@ -9,6 +9,11 @@ import UIKit
 
 class TableViewCellOutline: UITableViewCell {
 
+    @IBOutlet weak var Title: UILabel!
+    
+    @IBOutlet weak var Content: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

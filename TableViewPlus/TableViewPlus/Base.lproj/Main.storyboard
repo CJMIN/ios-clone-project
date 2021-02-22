@@ -115,7 +115,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WJi-A0-7UF">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="VC2" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WJi-A0-7UF">
                                 <rect key="frame" x="0.0" y="128" width="414" height="734"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -163,7 +163,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="cjc-I8-eEm"/>
                     <connections>
-                        <segue destination="G79-Yg-tWP" kind="show" id="nDv-BK-ABS"/>
+                        <outlet property="tableView" destination="WJi-A0-7UF" id="5YX-Hf-bPc"/>
+                        <segue destination="G79-Yg-tWP" kind="show" identifier="VC2toVC3" id="nDv-BK-ABS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mlW-ON-aeh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
