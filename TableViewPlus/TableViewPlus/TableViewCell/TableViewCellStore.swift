@@ -9,6 +9,10 @@ import UIKit
 
 class TableViewCellStore: UITableViewCell {
 
+    @IBOutlet weak var EdditTitle: UITextField!
+    @IBOutlet weak var EdditContent: UITextField!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

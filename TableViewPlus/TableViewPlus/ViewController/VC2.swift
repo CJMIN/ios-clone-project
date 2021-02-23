@@ -1,10 +1,16 @@
 import UIKit
 
-var V2ContactTitleArray2:[[String]] = [["Title"]]
-var V2ContactContentArray2:[[String]] = [["Content"]]
+var ContactTitleArray2:[[String]] = [["CJM"]]
+var ContactContentArray2:[[String]] = [["010 0000 0000"]]
 
 class VC2: UIViewController {
     
+    var V2ContactTitleArray:[String] = []
+    
+    var V2ContactContentArray:[String] = []
+    
+    var idx:Int = 0
+    var idxpath:Int = 0
     
     
     @IBAction func PlusPropertyButton(_ sender: Any) {
@@ -14,18 +20,22 @@ class VC2: UIViewController {
     
     @IBAction func EdditButton(_ sender: Any) {
         
+        let num :Int = V2ContactTitleArray.count + 1
+        
+        self.V2ContactTitleArray.append("Title")
+        self.V2ContactContentArray.append("Content")
+        ContactContentArray2[self.idx].append("Content")
+        ContactTitleArray2[self.idx].append("Title")
+        self.tableView.reloadData()
+//        self.performSegue(withIdentifier: "VC2toVC3", sender: nil)
+        
     }
+    
     @IBOutlet weak var tableView: UITableView!
     
     
     
-    var V2ContactTitleArray:[String] = []
     
-   
-    
-    var V2ContactContentArray:[String] = []
-    
-    var idx:Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,15 +56,16 @@ class VC2: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         print("First : viewWillAppear")
         
-        if V2ContactTitleArray2.count == idx{
-            V2ContactTitleArray2.append([])
-            V2ContactContentArray2.append([])
-        }
-        V2ContactTitleArray = V2ContactTitleArray2[idx]
-        V2ContactContentArray = V2ContactContentArray2[idx]
-        
         print(idx)
-        print(V2ContactContentArray)
+        print(ContactContentArray2)
+        print(ContactTitleArray2)
+        
+        V2ContactTitleArray = ContactTitleArray2[idx]
+        V2ContactContentArray = ContactContentArray2[idx]
+        
+        
+        
+        self.tableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,6 +102,7 @@ extension VC2: UITableViewDataSource{
         print("@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         print(indexPath.row)
         print(V2ContactContentArray)
+        print(V2ContactTitleArray)
         cell.Title.text = self.V2ContactTitleArray[indexPath.row]
         cell.Content.text = self.V2ContactContentArray[indexPath.row]
         
@@ -101,19 +113,24 @@ extension VC2: UITableViewDataSource{
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             
+            print(V2ContactTitleArray)
+            
+            print(indexPath.row)
+            
             V2ContactTitleArray.remove(at: indexPath.row)
-            V2ContactTitleArray2.remove(at: indexPath.row)
+            ContactTitleArray2[idx].remove(at: indexPath.row)
             V2ContactContentArray.remove(at: indexPath.row)
-            V2ContactContentArray2.remove(at: indexPath.row)
+            ContactContentArray2[idx].remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .bottom)
             
         }
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//        self.performSegue(withIdentifier: "VC1toVC2", sender: nil)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.idxpath = indexPath.row
+        self.performSegue(withIdentifier: "VC2toVC3", sender: nil)
+    }
     
     
        
@@ -122,6 +139,25 @@ extension VC2: UITableViewDataSource{
 
 extension VC2: UITableViewDelegate{
     
-   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let dest = segue.destination
+        
+        guard let VC3 = dest as? VC3 else{
+            return
+        }
+        
+        VC3.idx = self.idx
+        VC3.idxpath = self.idxpath
+        VC3.Content = V2ContactContentArray[idxpath]
+        VC3.Title = V2ContactTitleArray[idxpath]
+            
+//        print("self idx : ",self.idx)
+//        print("VC2 idx : ",VC3.idx)
+//        
+//        
+        
+        
+    }
     
 }

@@ -10,11 +10,10 @@ class VC1: UIViewController {
     
     
     @IBAction func PlusButton(_ sender: Any) {
-        if self.ContactInforArray.contains("연락처를 입력하세요.") {
-            return
-        }
-        self.ContactInforArray.append("연락처를 입력하세요.")
+        self.ContactInforArray.append("Title")
         self.tableView.reloadData()
+        ContactTitleArray2.append(["Title"])
+        ContactContentArray2.append(["Content"])
     }
     
     
@@ -37,6 +36,12 @@ class VC1: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         print("First : viewWillAppear")
+        if ContactInforArray.count>0{
+            for i in 0...(ContactInforArray.count-1){
+                ContactInforArray[i] = ContactTitleArray2[i][0]
+            }
+        }
+        self.tableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
