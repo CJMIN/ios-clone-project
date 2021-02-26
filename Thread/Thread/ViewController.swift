@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     let spinMole = UIImage(named:"3")
     var stateOfmoles : [[Int]] = [[1,1,1,1],[2,1,2,1],[1,1,1,1],[1,2,1,1],[1,1,1,3],[1,1,1,1]]
     var flagForStart : Bool = false
+    var molePressedCount : Int = 0
+    let s = DispatchSemaphore(value: 1)
+ 
     
     
     func changeBackgroundImage(UIbuttonOutlet : UIButton, _ idx : [Int]){
@@ -36,6 +39,17 @@ class ViewController: UIViewController {
         
         countOfTappingMoles += 1
         UIbuttonOutlet.setBackgroundImage(spinMole, for: UIControl.State.normal)
+        
+       
+        s.wait()
+        if timeLeft>0{
+            molePressedCount += 1
+            print("COUNT : \(molePressedCount)")
+        }
+        s.signal()
+        
+        
+        
 //        usleep(10000)
 //        UIbuttonOutlet.setBackgroundImage(popDownMole, for: UIControl.State.normal)
         
@@ -169,24 +183,43 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var timeSecond: UILabel!
     @IBAction func startGame(_ sender: Any) {
-        
-        flagForStart = true
-        print("loglog")
-        countOfTappingMoles = 0
-        numForTimeSecond = 30
-        
+        if flagForStart == false{
+            flagForStart = true
+            print("loglog")
+            countOfTappingMoles = 0
+            if timeLeft==0{
+                timeLeft = 15
+            }
+            runTimer()
+            
+        }
     }
     
     func randomPop(index :[Int]){
         var numForStopTime : Int
-//        var numForRunningTime : Int
         
-        while numForTimeSecond > 0 {
+        while timeLeft > 0 {
             
             if stateOfmoles[index[0]][index[1]] != 1 {
-                numForStopTime = Int.random(in: 100000..<400000)
+                numForStopTime = Int.random(in: 500000..<10000000)
                 usleep(useconds_t(numForStopTime))
-                arrayUIButton[index[0]][index[1]].setBackgroundImage(popUpMole, for: UIControl.State.normal)
+                if timeLeft==0{
+                    flagForStart=false
+                    while flagForStart==false{
+                        
+                    }
+                    usleep(useconds_t(numForStopTime))
+                    
+                }
+                DispatchQueue.main.sync {
+                    arrayUIButton[index[0]][index[1]].setBackgroundImage(popUpMole, for: UIControl.State.normal)
+                    stateOfmoles[index[0]][index[1]] = popUpState
+                }
+                usleep(1500000)
+                DispatchQueue.main.sync {
+                    arrayUIButton[index[0]][index[1]].setBackgroundImage(popDownMole, for: UIControl.State.normal)
+                    stateOfmoles[index[0]][index[1]] = popDownState
+                }
                 
             }
             
@@ -195,8 +228,25 @@ class ViewController: UIViewController {
     }
     
     var countOfTappingMoles : Int = 0
-    var numForTimeSecond : Int = 30
-    var timerForGame : Timer?
+    var timeLeft : Int = 15
+    var timer : Timer?
+    
+    func runTimer() {
+         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateTimer(){
+        
+        timeLeft -= 1
+        
+        timeSecond.text = "\(timeLeft) 초"
+        
+        if timeLeft==0{
+            timer?.invalidate()
+        }
+        
+    }
+    
     
     
     override func viewDidLoad() {
@@ -206,7 +256,15 @@ class ViewController: UIViewController {
         
         arrayUIButton = [[mole11image,mole12image,mole13image,mole14image],[mole21image,mole22image,mole23image,mole24image],[mole31image,mole32image,mole33image,mole34image],[mole41image,mole42image,mole43image,mole44image],[mole51image,mole52image,mole53image,mole54image],[mole61image,mole62image,mole63image,mole64image]]
         
+        for i in 0...5{
+            for j in 0...3{
+                arrayUIButton[i][j].setBackgroundImage(popDownMole, for: UIControl.State.normal)
+                stateOfmoles[i][j] = 2
+                
+            }
+        }
         
+        timeSecond.text = "\(timeLeft) 초"
         
     }
     
@@ -219,11 +277,44 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         print("First : viewDidAppear")
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                if self.timeLeft==0{
+                    DispatchQueue.main.sync {
+                        var popUpWindow: PopUpWindow!
+                        popUpWindow = PopUpWindow(title: "Score", text: "\(self.countOfTappingMoles)", buttontext: "확인")
+                        self.present(popUpWindow, animated: true, completion: nil)
+                        self.timeSecond.text = "\(15) 초"
+                    }
+                    if self.timeLeft==0{
+                        self.flagForStart=false
+                        while self.flagForStart==false{
+                            
+                        }
+                        
+                    }
+                }
+
+
+            }
+        }
 
         DispatchQueue.global(qos: .userInitiated).async{
-            print("sleep start")
-            usleep(10000000)
-            print("sleep end")
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [0,0] )
+
+          
+
+            }
         }
         
         DispatchQueue.global(qos: .userInitiated).async{
@@ -233,17 +324,331 @@ class ViewController: UIViewController {
                     if self.flagForStart{
                         break
                     }
-                    
-                    self.randomPop( index : [1,1] )
                 }
+                
+                self.randomPop( index : [0,1] )
 
-
-                self.flagForStart = false
+                
 
             }
         }
         
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [0,2] )
+
+               
+
+            }
+        }
         
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [0,3] )
+
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [1,0] )
+
+              
+
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [1,1] )
+
+
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [1,2] )
+
+
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [1,3] )
+
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [2,0] )
+
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [2,1] )
+
+             
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [2,2] )
+
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [2,3] )
+
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [3,0] )
+
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [3,1] )
+
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [3,2] )
+
+               
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [3,3] )
+
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [4,0] )
+
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [4,1] )
+
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [4,2] )
+
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [4,3] )
+
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [5,0] )
+
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [5,1] )
+
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [5,2] )
+
+               
+            }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async{
+            while true {
+                /// busy running until press start button
+                while true {
+                    if self.flagForStart{
+                        break
+                    }
+                }
+                
+                self.randomPop( index : [5,3] )
+
+            }
+        }
         
         print("======================")
     }
@@ -260,13 +665,7 @@ class ViewController: UIViewController {
     
     
     
-    func timerCallback(){
-        
-        numForTimeSecond -= 1
-        
-        timeSecond.text = String(numForTimeSecond)
-        
-    }
+    
     
 
 }
