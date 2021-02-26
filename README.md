@@ -24,4 +24,6 @@
 
 <img width="419" alt="스크린샷 2021-02-20 오전 11 23 57" src="https://user-images.githubusercontent.com/46758264/108580316-584d7480-736e-11eb-8947-4228d6a95870.png">
 
-# 6.
+# 6. 두더지 잡기 게임 (Multithread)
+
+![이미지 2021  2  27  오전 1 24](https://user-images.githubusercontent.com/46758264/109326646-c9bf8280-789a-11eb-808a-a4ce69abd080.jpg)
