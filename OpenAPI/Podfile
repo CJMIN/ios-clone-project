@@ -1,0 +1,26 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'OpenAPI' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for OpenAPI
+
+  pod 'KakaoSDKCommon'
+  pod 'KakaoSDKAuth'
+  pod 'KakaoSDKUser'
+  pod 'AFNetworking', '~> 2.6'
+  pod 'ORStackView', '~> 3.0'
+  pod 'Alamofire', '~> 5.2'  
+
+  target 'OpenAPITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'OpenAPIUITests' do
+    # Pods for testing
+  end
+
+end

@@ -1,0 +1,6 @@
+framework module Pods_OpenAPI_OpenAPIUITests {
+  umbrella header "Pods-OpenAPI-OpenAPIUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
