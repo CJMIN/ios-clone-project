@@ -10,13 +10,15 @@
 		41A0172FC6BCA34317B9788F /* Pods_OpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8E34A8325824F092E5614F /* Pods_OpenAPI.framework */; };
 		8A8B5B0B25EC09A000F50274 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B5B0A25EC09A000F50274 /* AppDelegate.swift */; };
 		8A8B5B0D25EC09A000F50274 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B5B0C25EC09A000F50274 /* SceneDelegate.swift */; };
-		8A8B5B0F25EC09A000F50274 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B5B0E25EC09A000F50274 /* ViewController.swift */; };
 		8A8B5B1225EC09A000F50274 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B5B1025EC09A000F50274 /* Main.storyboard */; };
 		8A8B5B1425EC09A000F50274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B5B1325EC09A000F50274 /* Assets.xcassets */; };
 		8A8B5B1725EC09A000F50274 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B5B1525EC09A000F50274 /* LaunchScreen.storyboard */; };
 		8A8B5B2225EC09A000F50274 /* OpenAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B5B2125EC09A000F50274 /* OpenAPITests.swift */; };
 		8A8B5B2D25EC09A000F50274 /* OpenAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B5B2C25EC09A000F50274 /* OpenAPIUITests.swift */; };
 		8A8B5B5725EC0F1B00F50274 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B5B5625EC0F1B00F50274 /* LoginViewController.swift */; };
+		8A8B5BB525EF5AAA00F50274 /* VC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B5BB425EF5AAA00F50274 /* VC2.swift */; };
+		8A8B5BDE25EF835900F50274 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B5BDC25EF835900F50274 /* TableViewCell.swift */; };
+		8A8B5BDF25EF835900F50274 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B5BDD25EF835900F50274 /* TableViewCell.xib */; };
 		8D9ABD7C1F3243F9472849EF /* Pods_OpenAPI_OpenAPIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24946A975C22569CC3467286 /* Pods_OpenAPI_OpenAPIUITests.framework */; };
 		FE37CAFBC419B440B81AA392 /* Pods_OpenAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DB6F53CB6A50F379ABB056 /* Pods_OpenAPITests.framework */; };
 /* End PBXBuildFile section */
@@ -48,7 +50,6 @@
 		8A8B5B0725EC09A000F50274 /* OpenAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8B5B0A25EC09A000F50274 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A8B5B0C25EC09A000F50274 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8A8B5B0E25EC09A000F50274 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8A8B5B1125EC09A000F50274 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A8B5B1325EC09A000F50274 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A8B5B1625EC09A000F50274 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +61,9 @@
 		8A8B5B2C25EC09A000F50274 /* OpenAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPIUITests.swift; sourceTree = "<group>"; };
 		8A8B5B2E25EC09A000F50274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A8B5B5625EC0F1B00F50274 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8A8B5BB425EF5AAA00F50274 /* VC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC2.swift; sourceTree = "<group>"; };
+		8A8B5BDC25EF835900F50274 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		8A8B5BDD25EF835900F50274 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		DBE666642CFD04BE098C405A /* Pods-OpenAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenAPI.debug.xcconfig"; path = "Target Support Files/Pods-OpenAPI/Pods-OpenAPI.debug.xcconfig"; sourceTree = "<group>"; };
 		DFC43E9985929293D9326D41 /* Pods-OpenAPI-OpenAPIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenAPI-OpenAPIUITests.release.xcconfig"; path = "Target Support Files/Pods-OpenAPI-OpenAPIUITests/Pods-OpenAPI-OpenAPIUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FD615AFF91EBBF2627B5D7B3 /* Pods-OpenAPITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenAPITests.release.xcconfig"; path = "Target Support Files/Pods-OpenAPITests/Pods-OpenAPITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,10 +132,10 @@
 		8A8B5B0925EC09A000F50274 /* OpenAPI */ = {
 			isa = PBXGroup;
 			children = (
+				8A8B5BC325EF6FDA00F50274 /* Cell */,
+				8A8B5BC225EF6FC700F50274 /* VC */,
 				8A8B5B0A25EC09A000F50274 /* AppDelegate.swift */,
 				8A8B5B0C25EC09A000F50274 /* SceneDelegate.swift */,
-				8A8B5B5625EC0F1B00F50274 /* LoginViewController.swift */,
-				8A8B5B0E25EC09A000F50274 /* ViewController.swift */,
 				8A8B5B1025EC09A000F50274 /* Main.storyboard */,
 				8A8B5B1325EC09A000F50274 /* Assets.xcassets */,
 				8A8B5B1525EC09A000F50274 /* LaunchScreen.storyboard */,
@@ -156,6 +160,24 @@
 				8A8B5B2E25EC09A000F50274 /* Info.plist */,
 			);
 			path = OpenAPIUITests;
+			sourceTree = "<group>";
+		};
+		8A8B5BC225EF6FC700F50274 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				8A8B5B5625EC0F1B00F50274 /* LoginViewController.swift */,
+				8A8B5BB425EF5AAA00F50274 /* VC2.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		8A8B5BC325EF6FDA00F50274 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8A8B5BDC25EF835900F50274 /* TableViewCell.swift */,
+				8A8B5BDD25EF835900F50274 /* TableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C446954B2DF700BCF273CF98 /* Pods */ = {
@@ -280,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A8B5B1725EC09A000F50274 /* LaunchScreen.storyboard in Resources */,
+				8A8B5BDF25EF835900F50274 /* TableViewCell.xib in Resources */,
 				8A8B5B1425EC09A000F50274 /* Assets.xcassets in Resources */,
 				8A8B5B1225EC09A000F50274 /* Main.storyboard in Resources */,
 			);
@@ -409,8 +432,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A8B5BDE25EF835900F50274 /* TableViewCell.swift in Sources */,
 				8A8B5B5725EC0F1B00F50274 /* LoginViewController.swift in Sources */,
-				8A8B5B0F25EC09A000F50274 /* ViewController.swift in Sources */,
+				8A8B5BB525EF5AAA00F50274 /* VC2.swift in Sources */,
 				8A8B5B0B25EC09A000F50274 /* AppDelegate.swift in Sources */,
 				8A8B5B0D25EC09A000F50274 /* SceneDelegate.swift in Sources */,
 			);
