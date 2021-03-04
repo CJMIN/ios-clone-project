@@ -7,15 +7,18 @@
 
 import Foundation
 import UIKit
+import Alamofire
+import SwiftyJSON
+
+let apiKey = "b39aeb1e660919371efad86125f1a70d"
 
 class VC2: UIViewController {
-
-    
-    
     
     @IBOutlet weak var tableView: UITableView!
     
-   
+    @IBAction func loginButton(_ sender: Any) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,6 +118,32 @@ extension VC2: UITableViewDelegate{
 //
         
         
+    }
+    
+    
+    func getCurrentWeather(lat:Double , lon:Double){
+        //접근하고자 하는 URL 정보
+        let URL = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(apiKey)&units=metric&lang=kr"
+
+        AF.request(URL).responseJSON { response in
+                    let result = response.result
+                  
+                    switch result {
+                    case .success(let value):
+                        let json = JSON(value)
+                        
+                        print("success")
+                        print(json)
+                        
+                    case .failure(let error):
+                        print(error.errorDescription ?? "")
+                    default:
+                        fatalError()
+                    }
+                }
+        
+        
+
     }
     
 }

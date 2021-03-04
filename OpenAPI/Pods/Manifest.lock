@@ -31,6 +31,7 @@ PODS:
     - KakaoSDKCommon (= 2.3.2)
   - ORStackView (3.0.1):
     - FLKAutoLayout (~> 0.2)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - KakaoSDKCommon
   - KakaoSDKUser
   - ORStackView (~> 3.0)
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
@@ -49,6 +51,7 @@ SPEC REPOS:
     - KakaoSDKCommon
     - KakaoSDKUser
     - ORStackView
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   AFNetworking: 8dd5f9b9691e09186393069a12cc3b5ed7c8b511
@@ -58,7 +61,8 @@ SPEC CHECKSUMS:
   KakaoSDKCommon: 4bb3981337921686948b7be094590f2edec5df87
   KakaoSDKUser: e6c0017a41e87a94bdcd873d0178ad75be8126d4
   ORStackView: a1bb52748cd0ae29891c140baf22ff8972fb363c
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: b21ba6053b7f9ac9e3c99900ec7e2a05b5763022
+PODFILE CHECKSUM: 777a1a748201db6fc62d7232d663c76b021b4030
 
 COCOAPODS: 1.10.1
