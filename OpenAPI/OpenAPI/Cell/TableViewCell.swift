@@ -9,6 +9,15 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var temperture: UILabel!
+    @IBOutlet weak var weather: UILabel!
+    @IBOutlet weak var weatherImage: UIImageView!
+    @IBOutlet weak var maxTemperture: UILabel!
+    @IBOutlet weak var minTemperture: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var time: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
