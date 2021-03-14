@@ -15,6 +15,8 @@
 		8A8290DF259AE09D0047CF25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8290DD259AE09D0047CF25 /* LaunchScreen.storyboard */; };
 		8A8290EA259AE09D0047CF25 /* MyAlbumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8290E9259AE09D0047CF25 /* MyAlbumTests.swift */; };
 		8A8290F5259AE09D0047CF25 /* MyAlbumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8290F4259AE09D0047CF25 /* MyAlbumUITests.swift */; };
+		8A8B5D1325FE926500F50274 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B5D1125FE926500F50274 /* TableViewController.swift */; };
+		8A8B5D1425FE926500F50274 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B5D1225FE926500F50274 /* TableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		8A8290F0259AE09D0047CF25 /* MyAlbumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAlbumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8290F4259AE09D0047CF25 /* MyAlbumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlbumUITests.swift; sourceTree = "<group>"; };
 		8A8290F6259AE09D0047CF25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A8B5D1125FE926500F50274 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		8A8B5D1225FE926500F50274 /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				8A8290DB259AE09D0047CF25 /* Assets.xcassets */,
 				8A8290DD259AE09D0047CF25 /* LaunchScreen.storyboard */,
 				8A8290E0259AE09D0047CF25 /* Info.plist */,
+				8A8B5D1125FE926500F50274 /* TableViewController.swift */,
+				8A8B5D1225FE926500F50274 /* TableViewController.xib */,
 			);
 			path = MyAlbum;
 			sourceTree = "<group>";
@@ -237,6 +243,7 @@
 				8A8290DF259AE09D0047CF25 /* LaunchScreen.storyboard in Resources */,
 				8A8290DC259AE09D0047CF25 /* Assets.xcassets in Resources */,
 				8A8290DA259AE09D0047CF25 /* Main.storyboard in Resources */,
+				8A8B5D1425FE926500F50274 /* TableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +271,7 @@
 				8A8290D7259AE09D0047CF25 /* ViewController.swift in Sources */,
 				8A8290D3259AE09D0047CF25 /* AppDelegate.swift in Sources */,
 				8A8290D5259AE09D0047CF25 /* SceneDelegate.swift in Sources */,
+				8A8B5D1325FE926500F50274 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
